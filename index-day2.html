@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click to Display YouTube Videos</title>
+</head>
+<body>
+ <!-- Normal Links -->
+    <a href="https://www.google.com" target="_blank">Open Google</a><br>
+    <a href="https://www.youtube.com" target="_blank">Open YouTube</a><br><br>
+<!-- Image loaded from URL so it works in Live Server automatically --> <img src="https://picsum.photos/500/300" width="500" alt="Online Image">
+    <h1>Click a Video to Display It Below</h1>
+
+    <!-- Clickable Links -->
+    <a href="#" onclick="showSundar()">Sundar Pichai Video</a><br><br>
+    <a href="#" onclick="showKalam()">APJ Abdul Kalam Video</a><br><br>
+
+    <hr><br>
+
+    <!-- Video will appear here -->
+    <div id="videoBox"></div>
+
+    <script>
+        function showSundar() {
+            document.getElementById("videoBox").innerHTML = `
+                <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/RsAKKF2-_Kg" 
+                    title="Alphabet CEO Sundar Pichai on Future of AI, Antitrust, and Privacy" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        }
+
+        function showKalam() {
+            document.getElementById("videoBox").innerHTML = `
+                <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/smjfGmCn7x0" 
+                    title="Memories: Dr. APJ Abdul Kalam's speech at European Union" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        }
+    </script>
+
+</body>
+</html>
