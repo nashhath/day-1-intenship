@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag Scroll Gallery</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* SCROLLABLE AREA */
+        .scroll-box {
+            width: 95%;
+            margin: auto;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            cursor: grab;
+
+            /* hide scrollbar */
+            scrollbar-width: none;
+        }
+        .scroll-box::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* GRID inside scroll */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: 200px;
+            gap: 20px;
+            padding: 10px;
+            width: max-content;
+        }
+
+        /* Images */
+        .gallery img {
+            width: 260px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08);
+        }
+        div.text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    width:50px;
+    height:50px;
+    background-color: steelblue;
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Drag to Scroll Gallery</h1>
+
+    <div class="scroll-box" id="dragScroll">
+
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a">
+            <img src="https://images.unsplash.com/photo-1503264116251-35a269479413">
+            <img src="https://images.unsplash.com/photo-1496483648148-47c686dc86a8">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+            <img src="https://images.unsplash.com/photo-1489365091240-6a18fc761ec2">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+            <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913">
+
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+        </div>
+
+    </div>
+
+    <script>
+        const slider = document.getElementById("dragScroll");
+        let mouseDown = false;
+        let startX, scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            mouseDown = true;
+            slider.style.cursor = "grabbing";
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            mouseDown = false;
+            slider.style.cursor = "grab";
+        });
+
+        slider.addEventListener("mouseup", () => {
+            mouseDown = false;
+            slider.style.cursor = "grab";
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!mouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; 
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+
+</body>
+</html>
+
+

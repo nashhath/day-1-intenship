@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  background-color: rgb(195, 127, 214);
+}
+
+.container div {
+  background-color: #e6bee6;
+  margin: 10px;
+  padding: 20px;
+  font-size: 24px;
+}
+.container1 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(173, 95, 238);
+}
+
+.container1 div {
+  background-color: #d196e4;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
+}
+div.text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    width:50px;
+    height:50px;
+    background-color: steelblue;
+</style>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<div class="container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>  
+  <div>Item 4</div>
+  <div>Item 5</div>
+</div>
+
+<p>Flexbox must have a parent element with the display property set to flex or inline-flex.</p>
+<p>Direct child elements of the flex container automatically becomes flex items.</p>
+<h1>flex-direction: column</h1>
+
+<p>flex-direction: column; displays the flex items vertically (from top to bottom):</p>
+
+<div class="container1">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+<div class="text">      </div>
+</body>
+
+</html>
+
+

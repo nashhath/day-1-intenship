@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    }
+    @keyframes rotate{
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes slide{
+        0% { transform: translateX(0); }
+        50% { transform: translateX(100px); }
+        100% { transform: translateX(0); }
+    }
+    @keyframes colorChange{
+        0% { background-color: purple; }
+        25% { background-color: orange; }
+        50% { background-color: pink; }
+        75% { background-color: yellow; }
+        100% { background-color: purple; }
+    }
+div.text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    width:50px;
+    height:50px;
+    background-color: steelblue;
+    animation: fadeInOut 2s infinite;
+}
+div.rotate {
+    width:50px;
+    height:50px;
+    background-color: red;
+    animation: rotate 2s infinite linear;
+}
+div.slide {
+    width:50px;
+    height:50px;
+    background-color: green;
+    animation: slide 2s infinite;
+}
+div.colorBox {
+    width:50px;
+    height:50px;
+    animation: colorChange 2s infinite;
+}
+</style>
+<body>
+    <div class="text"></div>
+    <div class="rotate"></div>
+    <div class="slide"></div>
+    <div class="colorBox"></div>
+</body>
+</html>
